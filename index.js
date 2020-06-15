@@ -36,7 +36,7 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == 'server') {
+  if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
@@ -53,14 +53,18 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('천악서버', img)
 
-    message.channel.send(embed2)
-  } else if(message.content == 'embed2') {
-    let helpImg = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=128';
-    let commandList = [
-      {name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
-      {name: 'embed2', desc: 'embed 예제2 (help)'},
-      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      message.channel.send(embed)
+    } else if(message.content == '!help') {
+      let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
+      let commandList = [
+        {name: '!help', desc: 'help'},
+        {name: 'ping', desc: '현재 핑 상태'},
+        {name: 'embed', desc: 'embed 예제1'},
+        {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+        {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+        {name: '!청소', desc: '텍스트 지움'},
+        {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
+        {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
