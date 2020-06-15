@@ -36,7 +36,7 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == '천악서버') {
+  if(message.content == 'server') {
     let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
@@ -53,7 +53,7 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('천악서버', img)
 
-    message.channel.send(embed8888888888888888888888888888888)
+    message.channel.send(embed2)
   } else if(message.content == 'embed2') {
     let helpImg = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=128';
     let commandList = [
