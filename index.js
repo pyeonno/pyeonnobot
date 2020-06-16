@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "";
+const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XuhM8A.LxNds7Lj6Vltq9AOqBKwgVURMtA";
 const momenttz = require('moment-timezone');
 const MessageAdd = require('./db/message_add.js')
 const welcomeChannelName = "안녕하세요";
@@ -42,7 +42,7 @@ client.on('message', (message) => {
   if(message.content == 'ping') {
     return message.reply('pong');
   }
-  
+
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
     let embed = new Discord.RichEmbed()
