@@ -36,7 +36,7 @@ client.on('message', (message) => {
     return message.reply('https://images.halloweencostumes.com/blog/images/847/4451-1/bing-bong.jpg');
   }
 
-  if(message.content == 'server') {
+  if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('천악서버 디스코드')
@@ -53,7 +53,7 @@ client.on('message', (message) => {
       .setTimestamp()
       .setFooter('천악서버', img)
 
-      message.channel.send(server)
+      message.channel.send(embed)
     } else if(message.content == '!help') {
       let helpImg = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=2048';
       let commandList = [
