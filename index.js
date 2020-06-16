@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '천악서버 봇 작동중' }, status: 'online' })
+  client.user.setPresence({ game: { name: '천악서버 전용봇' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -18,7 +18,7 @@ client.on("guildMemberAdd", (member) => {
 
   welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
 
-  member.addRole(guild.roles.find(role => role.name == "선택"));
+  member.addRole(guild.roles.find(role => role.name == "게스트"));
 });
 
 client.on("guildMemberRemove", (member) => {
@@ -33,7 +33,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == 'ping') {
-    return message.reply('https://images.halloweencostumes.com/blog/images/847/4451-1/bing-bong.jpg');
+    return message.reply('pong');
   }
 
   if(message.content == 'embed') {
@@ -88,13 +88,13 @@ client.on('message', (message) => {
         })
         .catch((err) => {
           if(err.code == 50013) {
-            message.channel.send('**'+x.channels.find(x => x.type == 'text').guild.name+'** 채널 권한이 없어 초대코드 발행 실패 (천악서버 봇)')
+            message.channel.send('**'+x.channels.find(x => x.type == 'text').guild.name+'** 채널 권한이 없어 초대코드 발행 실패')
           }
         })
     });
   } else if(message.content == '!초대코드') {
     if(message.channel.type == 'dm') {
-      return message.reply('현재 DM 에서 사용할 수 없는 명령어 입니다. (천악서버 봇)');
+      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
     message.guild.channels.get(message.channel.id).createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
       .then(invite => {
@@ -102,7 +102,7 @@ client.on('message', (message) => {
       })
       .catch((err) => {
         if(err.code == 50013) {
-          message.channel.send('**'+message.guild.channels.get(message.channel.id).guild.name+'** 채널 권한이 없어 초대코드 발행 실패 (천악서버 봇)')
+          message.channel.send('**'+message.guild.channels.get(message.channel.id).guild.name+'** 채널 권한이 없어 초대코드 발행 실패')
         }
       })
   } else if(message.content.startsWith('!전체공지2')) {
@@ -110,9 +110,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('천악서버')
+        .setAuthor('공지 of 콜라곰 BOT')
         .setColor('#186de6')
-        .setFooter(`천악서버`)
+        .setFooter(`콜라곰 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
