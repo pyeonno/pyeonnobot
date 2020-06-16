@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XuhHVw.MivFQojq83Fj3MZJE2_44Orp23I";
+const token = process.argv.length == 2 ? process.env.token : "";
 const moment = require("moment");
 require("moment-duration-format");
 const momenttz = require('moment-timezone');
@@ -47,11 +47,11 @@ client.on('message', (message) => {
 
   if(message.content == '!si') {
     let embed = new Discord.RichEmbed()
-    let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
+    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
-    embed.setAuthor('천악서버', img)
-    embed.setFooter(`천악서버`)
+    embed.setAuthor('server info of 콜라곰 BOT', img)
+    embed.setFooter(`콜라곰 BOT ❤️`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
@@ -77,40 +77,40 @@ client.on('message', (message) => {
   }
 
   if(message.content == 'embed') {
-    let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
+    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('천악서버 디스코드')
-      .setURL('https://discord.gg/wJdP9EQ')
-      .setAuthor('천악서버', img, 'https://discord.gg/wJdP9EQ')
+      .setTitle('타이틀')
+      .setURL('http://www.naver.com')
+      .setAuthor('나긋해', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
-      .addField('천악서버 3시즌 대표', '𝓹𝔂𝓮𝓸𝓷𝓷𝓸#0001')
-      .addField('천악서버 관리자', '자몽#4796', true)
-      .addField('천악서버 관리자', 'ㄹㄷㄴㄱ#5219', true)
-      .addField('천악서버 관리자', '포카리#1787', true)
-      .addField('천악서버 장르', '소통\n좀비고\nRPG\n')
+      .addField('Inline field title', 'Some value here')
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here', true)
+      .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('천악서버', img)
+      .setFooter('나긋해가 만듬', img)
 
-      message.channel.send(embed)
-    } else if(message.content == '!help') {
-      let helpImg = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=2048';
-      let commandList = [
-        {name: '!help', desc: 'help'},
-        {name: 'ping', desc: '현재 핑 상태(수정상태)'},
-        {name: 'embed', desc: 'embed 예제1'},
-        {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
-        {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
-        {name: '!청소', desc: '텍스트 지움'},
-        {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-        {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+    message.channel.send(embed)
+  } else if(message.content == '!help') {
+    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
+    let commandList = [
+      {name: '!help', desc: 'help'},
+      {name: 'ping', desc: '현재 핑 상태'},
+      {name: 'embed', desc: 'embed 예제1'},
+      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+      {name: '!청소', desc: '텍스트 지움'},
+      {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
+      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('천악서버', helpImg)
+      .setAuthor('Help of 콜라곰 BOT', helpImg)
       .setColor('#186de6')
-      .setFooter(`천악서버`)
+      .setFooter(`콜라곰 BOT ❤️`)
       .setTimestamp()
     
     commandList.forEach(x => {
