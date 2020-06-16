@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XugeNA.o0T7Cbdr12_Ef48zefuFLTWVZbw";
+const token = process.argv.length == 2 ? process.env.token : "";
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -39,7 +39,7 @@ client.on('message', (message) => {
   if(message.content == 'server') {
     let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('천악서버 디스코드 주소'')
+      .setTitle('천악서버 디스코드')
       .setURL('https://discord.gg/wJdP9EQ')
       .setAuthor('천악서버', img, 'https://discord.gg/wJdP9EQ')
       .setThumbnail(img)
