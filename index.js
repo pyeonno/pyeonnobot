@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XuhN0w.FZUT3wbp1uOzJghGOK-64ErZkds";
-const MessageAdd = require('./db/message_add.js')
+const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XuhOmA.phtxny_TJXveMHSQf7YraL380Ts";
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -9,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
+  client.user.setPresence({ game: { name: '천악서버 {디스코드봇}' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -30,16 +29,11 @@ client.on("guildMemberRemove", (member) => {
   byeChannel.send(`<@${deleteUser.id}> ${byeChannelComment}\n`);
 });
 
-client.on("messageUpdate", (message) => {
-  MessageSave(message, true)
-});
-
 client.on('message', (message) => {
-  MessageSave(message)
   if(message.author.bot) return;
 
   if(message.content == 'ping') {
-    return message.reply('pong');
+    return message.reply('https://www.meter.net/ping-test/');
   }
 
   if(message.content == 'embed') {
@@ -212,76 +206,6 @@ async function AutoMsgDelete(message, str, delay = 3000) {
   setTimeout(() => {
     msg.delete();
   }, delay);
-}
-
-function getEmbedFields(message, modify=false) {
-  if(message.content == '' && message.embeds.length > 0) {
-    let e = message.embeds[0].fields;
-    let a = [];
-
-    for(let i=0;i<e.length;i++) {
-        a.push(`\`${e[i].name}\` - \`${e[i].value}\`\n`);
-    }
-
-    return a.join('');
-  } else if(modify) {
-    return message.author.lastMessage.content;
-  } else {
-    return message.content;
-  }
-}
-
-function MessageSave(message, modify=false) {
-  imgs = []
-  if (message.attachments.array().length > 0) {
-    message.attachments.array().forEach(x => {
-      imgs.push(x.url+'\n')
-    });
-  }
-
-  username = message.author.username.match(/[\u3131-\uD79D^a-zA-Z^0-9]/ugi)
-  channelName = message.channel.type != 'dm' ? message.channel.name : ''
-  try {
-    username = username.length > 1 ? username.join('') : username
-  } catch (error) {}
-
-  try {
-    channelName = channelName.length > 1 ? channelName.join('') : channelName
-  } catch (error) {}
-
-  var s = {
-    ChannelType: message.channel.type,
-    ChannelId: message.channel.type != 'dm' ? message.channel.id : '',
-    ChannelName: channelName,
-    GuildId: message.channel.type != 'dm' ? message.channel.guild.id : '',
-    GuildName: message.channel.type != 'dm' ? message.channel.guild.name : '',
-    Message: getEmbedFields(message, modify),
-    AuthorId: message.author.id,
-    AuthorUsername: username + '#' + message.author.discriminator,
-    AuthorBot: Number(message.author.bot),
-    Embed: Number(message.embeds.length > 0), // 0이면 false 인거다.
-    CreateTime: momenttz().tz('Asia/Seoul').locale('ko').format('ll dddd LTS')
-  }
-
-  s.Message = (modify ? '[수정됨] ' : '') + imgs.join('') + s.Message
-
-  MessageAdd(
-    s.ChannelType,
-    s.ChannelId,
-    s.ChannelName,
-    s.GuildId,
-    s.GuildName,
-    s.Message,
-    s.AuthorId,
-    s.AuthorUsername,
-    s.AuthorBot,
-    s.Embed,
-    s.CreateTime,
-  )
-    // .then((res) => {
-    //   console.log('db 저장을 했다.', res);
-    // })
-    .catch(error => console.log(error))
 }
 
 
