@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XuhM8A.LxNds7Lj6Vltq9AOqBKwgVURMtA";
-const momenttz = require('moment-timezone');
+const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XuhN0w.FZUT3wbp1uOzJghGOK-64ErZkds";
 const MessageAdd = require('./db/message_add.js')
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
