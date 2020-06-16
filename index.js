@@ -33,7 +33,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == 'ping') {
-    return message.reply('pong');
+    return message.reply('https://images.halloweencostumes.com/blog/images/847/4451-1/bing-bong.jpg');
   }
 
   if(message.content == 'embed') {
@@ -110,9 +110,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 콜라곰 BOT')
+        .setAuthor('천악서버')
         .setColor('#186de6')
-        .setFooter(`콜라곰 BOT ❤️`)
+        .setFooter(`천악서버`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
