@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.Xuq4vw.9s2b5Z71J5jqkYdjP1qwfhXBIjY";
+const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XvNKJQ.lMGjbWE0IyD566ACyBOAgUourYU";
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '천악서버 {디스코드봇}' }, status: 'online' })
+  client.user.setPresence({ game: { name: '𝕯𝖎𝖘𝖈𝖔𝖗𝖉 𝕭𝖔𝖙' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -37,21 +37,21 @@ client.on('message', (message) => {
   }
 
   if(message.content == 'embed') {
-    let img = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=256';
+    let img = 'https://cdn.discordapp.com/icons/724029979595112519/fae03a59b81fd2b2d5db5aa7b3abb9d2.webp?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('천악서버 디스코드')
-      .setURL('https://discord.gg/wJdP9EQ')
-      .setAuthor('천악서버', img, 'https://discord.gg/wJdP9EQ')
+      .setTitle('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝕯𝖎𝖘𝖈𝖔𝖗𝖉')
+      .setURL('https://discord.gg/YVezpnq')
+      .setAuthor('천악서버', img, 'https://discord.gg/YVezpnq')
       .setThumbnail(img)
       .addBlankField()
-      .addField('천악서버 3시즌 대표', '𝓹𝔂𝓮𝓸𝓷𝓷𝓸#0001')
-      .addField('천악서버 관리자', '자몽#4796', true)
-      .addField('천악서버 관리자', 'ㄹㄷㄴㄱ#5219', true)
-      .addField('천악서버 관리자', '포카리#1787', true)
-      .addField('천악서버 장르', '소통\n좀비고\nRPG\n')
+      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 대표', '편노')
+      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 관리자', '주말', true)
+      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 관리자', '자몽', true)
+      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 관리자', '으얽', true)
+      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 장르', '소통\n좀비고\n학교\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('천악서버', img)
+      .setFooter('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑', img)
 
       message.channel.send(embed)
     } else if(message.content == '!help') {
@@ -68,9 +68,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('천악서버', helpImg)
+      .setAuthor('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑', helpImg)
       .setColor('#186de6')
-      .setFooter(`천악서버`)
+      .setFooter(`𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -110,9 +110,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 천악서버 BOT')
+        .setAuthor('공지 of 𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 BOT')
         .setColor('#186de6')
-        .setFooter(`천악서버 BOT ❤️`)
+        .setFooter(`𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
