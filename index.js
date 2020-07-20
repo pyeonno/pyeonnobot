@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XvNKJQ.lMGjbWE0IyD566ACyBOAgUourYU";
+const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XxWQQw.lMzl1iZfcZa3TDaK5j3KQh3neAk";
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -44,11 +44,11 @@ client.on('message', (message) => {
       .setAuthor('천악서버', img, 'https://discord.gg/YVezpnq')
       .setThumbnail(img)
       .addBlankField()
-      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 대표', '편노')
-      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 관리자', '주말', true)
-      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 관리자', '자몽', true)
-      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 관리자', '으얽', true)
-      .addField('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 장르', '소통\n좀비고\n학교\n')
+      .addField('「 ⭐ 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 메인 친목서버 ⭐ 」 대표', '편노')
+      .addField('관리자', '주말', true)
+      .addField('관리자', '자몽', true)
+      .addField('관리자', '으얽', true)
+      .addField('장르', '친목\n커뮤니티\n이벤트\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑', img)
@@ -68,9 +68,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑', helpImg)
+      .setAuthor('「 ⭐ 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 메인 친목서버 ⭐ 」', helpImg)
       .setColor('#186de6')
-      .setFooter(`𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑`)
+      .setFooter(`「 ⭐ 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 메인 친목서버 ⭐ 」`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -94,7 +94,7 @@ client.on('message', (message) => {
     });
   } else if(message.content == '!초대코드') {
     if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
+      return message.reply('「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」dm에서 사용할 수 없는 명령어 입니다.');
     }
     message.guild.channels.get(message.channel.id).createInvite({maxAge: 0}) // maxAge: 0은 무한이라는 의미, maxAge부분을 지우면 24시간으로 설정됨
       .then(invite => {
@@ -110,9 +110,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 BOT')
+        .setAuthor('공지 of BOT')
         .setColor('#186de6')
-        .setFooter(`𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝖘𝖈𝖍𝖔𝖔𝖑 BOT ❤️`)
+        .setFooter(`편노#0001 BOT ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
@@ -122,9 +122,9 @@ client.on('message', (message) => {
         x.user.send(embed)
       });
   
-      return message.reply('공지를 전송했습니다.');
+      return message.reply('「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」공지를 전송했습니다.');
     } else {
-      return message.reply('채널에서 실행해주세요.');
+      return message.reply('「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」채널에서 실행해주세요.');
     }
   } else if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
@@ -135,13 +135,13 @@ client.on('message', (message) => {
         x.user.send(`<@${message.author.id}> ${contents}`);
       });
   
-      return message.reply('공지를 전송했습니다.');
+      return message.reply('「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」공지를 전송했습니다.');
     } else {
-      return message.reply('채널에서 실행해주세요.');
+      return message.reply('「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」채널에서 실행해주세요.');
     }
   } else if(message.content.startsWith('!청소')) {
     if(message.channel.type == 'dm') {
-      return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
+      return message.reply('「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」dm에서 사용할 수 없는 명령어 입니다.');
     }
     
     if(message.channel.type != 'dm' && checkPermission(message)) return
@@ -150,9 +150,9 @@ client.on('message', (message) => {
     var isNum = !isNaN(clearLine)
 
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
-      message.channel.send("1부터 100까지의 숫자만 입력해주세요.")
+      message.channel.send("「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」1부터 100까지의 숫자만 입력해주세요.")
       return;
-    } else if(!isNum) { // c @나긋해 3
+    } else if(!isNum) { // c 3
       if(message.content.split('<@').length == 2) {
         if(isNaN(message.content.split(' ')[2])) return;
 
@@ -173,7 +173,7 @@ client.on('message', (message) => {
     } else {
       message.channel.bulkDelete(parseInt(clearLine)+1)
         .then(() => {
-          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "개의 메시지를 삭제했습니다. (이 메세지는 잠시 후에 사라집니다.)");
+          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」개의 메시지를 삭제했습니다. (이 메세지는 잠시 후에 사라집니다.)");
         })
         .catch(console.error)
     }
@@ -182,7 +182,7 @@ client.on('message', (message) => {
 
 function checkPermission(message) {
   if(!message.member.hasPermission("MANAGE_MESSAGES")) {
-    message.channel.send(`<@${message.author.id}> ` + "명령어를 수행할 관리자 권한을 소지하고 있지않습니다.")
+    message.channel.send(`<@${message.author.id}> ` + "「 𝓟𝔂𝓮𝓸𝓷𝓷𝓸 𝓓𝓘𝓢𝓒𝓞𝓡𝓓 」명령어를 수행할 관리자 권한을 소지하고 있지않습니다.")
     return true;
   } else {
     return false;
