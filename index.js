@@ -32,7 +32,7 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == '!정답 13cm') {
+  if(message.content == '!정답 13') {
     return message.reply('정답입니다!');
   }
 
