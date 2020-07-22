@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzIyMDg3ODE2MTYyNTc0Mzg3.XxWQQw.lMzl1iZfcZa3TDaK5j3KQh3neAk";
+const token = process.argv.length == 2 ? process.env.token : "";
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -32,15 +32,15 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('https://www.meter.net/ping-test/');
+  if(message.content == '!정답 13cm') {
+    return message.reply('정답입니다!');
   }
 
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/724029979595112519/fae03a59b81fd2b2d5db5aa7b3abb9d2.webp?size=256';
     let embed = new Discord.RichEmbed()
-      .setTitle('𝖕𝖞𝖊𝖔𝖓𝖓𝖔 𝕯𝖎𝖘𝖈𝖔𝖗𝖉')
-      .setURL('https://discord.gg/YVezpnq')
+      .setTitle('𝕯𝖎𝖘𝖈𝖔𝖗𝖉')
+      .setURL('https://discord.gg/gtRQhvJ')
       .setAuthor('천악서버', img, 'https://discord.gg/YVezpnq')
       .setThumbnail(img)
       .addBlankField()
@@ -58,7 +58,6 @@ client.on('message', (message) => {
       let helpImg = 'https://cdn.discordapp.com/avatars/722087816162574387/d0eced4fa467fd77cdbbd6f39f45fcb7.png?size=2048';
       let commandList = [
         {name: '!help', desc: 'help'},
-        {name: 'ping', desc: '현재 핑 상태(수정상태)'},
         {name: 'embed', desc: 'embed 예제1'},
         {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
         {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
