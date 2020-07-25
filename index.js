@@ -29,13 +29,6 @@ client.on("guildMemberRemove", (member) => {
   byeChannel.send(`<@${deleteUser.id}> ${byeChannelComment}\n`);
 });
 
-client.on('message', (message) => {
-  if(message.author.bot) return;
-
-  if(message.content == '!정답 13') {
-    return message.reply('정답입니다!');
-  }
-
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/724029979595112519/fae03a59b81fd2b2d5db5aa7b3abb9d2.webp?size=256';
     let embed = new Discord.RichEmbed()
